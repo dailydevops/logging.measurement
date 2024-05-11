@@ -27,5 +27,5 @@ jobs:
       dotnet-logging: ${{ inputs.dotnet-logging }}
       dotnet-version: |
         7.x
-      solution: ./Extensions.Logging.StopWatch.sln
+      solution: ./Extensions.Logging.Measurement.sln
     secrets: inherit

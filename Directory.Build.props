@@ -9,4 +9,17 @@
   <Import Project="$(DirEngineeringSettings)src.build.props" Condition=" '$(IsTestableProject)' != 'true' " />
   <Import Project="$(DirEngineeringSettings)tests.build.props" Condition=" '$(IsTestableProject)' == 'true' " />
 
+  <PropertyGroup>
+    <ProjectTargetFrameworks>net6.0;net7.0;net8.0</ProjectTargetFrameworks>
+    <TestTargetFrameworks>net6.0;net7.0;net8.0</TestTargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package settings">
+    <Title>$(MSBuildProjectName)</Title>
+    <Description>Extensions for `ILogger` implementations to measure execution times for a named scope.</Description>
+    <RepositoryUrl>https://github.com/dailydevops/extensions.logging.measurement.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dailydevops/extensions.logging.measurement.git</PackageProjectUrl>
+    <PackageTags>logging;stopwatch;measurement;scope</PackageTags>
+  </PropertyGroup>
+
 </Project>
