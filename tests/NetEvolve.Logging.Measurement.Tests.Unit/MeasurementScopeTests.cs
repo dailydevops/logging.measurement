@@ -1,4 +1,4 @@
-﻿namespace NetEvolve.Extensions.Logging.Measurement.Tests.Unit;
+﻿namespace NetEvolve.Logging.Measurement.Tests.Unit;
 
 using System;
 using Microsoft.Extensions.Logging;

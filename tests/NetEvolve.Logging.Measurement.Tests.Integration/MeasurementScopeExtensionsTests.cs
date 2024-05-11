@@ -1,4 +1,4 @@
-﻿namespace NetEvolve.Extensions.Logging.Measurement.Tests.Integration;
+﻿namespace NetEvolve.Logging.Measurement.Tests.Integration;
 
 using System;
 using System.Threading.Tasks;

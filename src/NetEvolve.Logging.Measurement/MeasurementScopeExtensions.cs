@@ -1,4 +1,4 @@
-﻿namespace NetEvolve.Extensions.Logging.Measurement;
+﻿namespace NetEvolve.Logging.Measurement;
 
 using System;
 using System.Runtime.CompilerServices;

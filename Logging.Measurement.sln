@@ -4,13 +4,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FBCDC86B-B9FE-4586-9211-DA4D9482F080}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEvolve.Extensions.Logging.Measurement", "src\NetEvolve.Extensions.Logging.Measurement\NetEvolve.Extensions.Logging.Measurement.csproj", "{11D1E1E6-E141-4E5F-924E-77785F29FB6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEvolve.Logging.Measurement", "src\NetEvolve.Logging.Measurement\NetEvolve.Logging.Measurement.csproj", "{11D1E1E6-E141-4E5F-924E-77785F29FB6B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EB60A7FA-4BC3-46F8-ABD1-3FA0627D262C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEvolve.Extensions.Logging.Measurement.Tests.Unit", "tests\NetEvolve.Extensions.Logging.Measurement.Tests.Unit\NetEvolve.Extensions.Logging.Measurement.Tests.Unit.csproj", "{05D94EF5-8ACF-411C-AE25-5E01D63BCE56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEvolve.Logging.Measurement.Tests.Unit", "tests\NetEvolve.Logging.Measurement.Tests.Unit\NetEvolve.Logging.Measurement.Tests.Unit.csproj", "{05D94EF5-8ACF-411C-AE25-5E01D63BCE56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEvolve.Extensions.Logging.Measurement.Tests.Integration", "tests\NetEvolve.Extensions.Logging.Measurement.Tests.Integration\NetEvolve.Extensions.Logging.Measurement.Tests.Integration.csproj", "{787ACAF6-4D1D-4E8F-9829-C65360FDE760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetEvolve.Logging.Measurement.Tests.Integration", "tests\NetEvolve.Logging.Measurement.Tests.Integration\NetEvolve.Logging.Measurement.Tests.Integration.csproj", "{787ACAF6-4D1D-4E8F-9829-C65360FDE760}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF9D62ED-ECAE-468D-BC49-3E158252C3C0}"
 	ProjectSection(SolutionItems) = preProject
