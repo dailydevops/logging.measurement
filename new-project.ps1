@@ -49,7 +49,7 @@ New-Project `
   -DisableTests $DisableTests `
   -DisableUnitTests $DisableUnitTests `
   -DisableIntegrationTests $DisableIntegrationTests `
-  -SolutionFile "###SOLUTION###" `
+  -SolutionFile "./Extensions.Logging.StopWatch.sln" `
   -OutputDirectory (Get-Location) `
   -EnableProjectGrouping $EnableProjectGrouping `
   -DisableArchitectureTests $DisableArchitectureTests
