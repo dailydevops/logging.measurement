@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using NetEvolve.Logging.Abstractions;
 using NetEvolve.Logging.XUnit;
 using Xunit;
 using Xunit.Abstractions;
