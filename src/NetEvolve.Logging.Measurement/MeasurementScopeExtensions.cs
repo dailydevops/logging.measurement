@@ -4,6 +4,7 @@ using System;
 using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Logging;
 using NetEvolve.Arguments;
+using NetEvolve.Logging.Abstractions;
 
 public static class MeasurementScopeExtensions
 {
@@ -20,6 +21,11 @@ public static class MeasurementScopeExtensions
     {
         ArgumentNullException.ThrowIfNull(logger);
         Argument.ThrowIfNullOrWhiteSpace(name);
+
+        if (completionLevel is LogLevel.None)
+        {
+            return NullScope.Instance;
+        }
 
         return new MeasurementScope(
             logger,
