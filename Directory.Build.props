@@ -20,7 +20,7 @@
     <RepositoryUrl>https://github.com/dailydevops/extensions.logging.measurement.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/dailydevops/extensions.logging.measurement.git</PackageProjectUrl>
     <PackageTags>logging;stopwatch;measurement;scope</PackageTags>
-    <CopyrightStartYear>2024</CopyrightStartYear>
+    <CopyrightYearStart>2024</CopyrightYearStart>
   </PropertyGroup>
 
 </Project>
