@@ -10,9 +10,8 @@ internal sealed partial class MeasurementScope : IDisposable
 {
     private readonly ILogger _logger;
     private readonly LogLevel _completionLevel;
-    private readonly LogLevel _failedLevel;
     private readonly bool? _printDebugInformation;
-    private readonly string _name;
+    private readonly string _identifier;
     private readonly string _memberName;
     private readonly string _filePath;
     private readonly int _lineNumber;
@@ -20,9 +19,8 @@ internal sealed partial class MeasurementScope : IDisposable
 
     internal MeasurementScope(
         ILogger logger,
-        string name,
+        string identifier,
         LogLevel completionLevel,
-        LogLevel failedLevel,
         bool? printDebugInformation,
         string memberName,
         string filePath,
@@ -30,16 +28,15 @@ internal sealed partial class MeasurementScope : IDisposable
     )
     {
         ArgumentNullException.ThrowIfNull(logger);
-        Argument.ThrowIfNullOrWhiteSpace(name);
+        Argument.ThrowIfNullOrWhiteSpace(identifier);
         Argument.ThrowIfNullOrWhiteSpace(memberName);
         Argument.ThrowIfNullOrWhiteSpace(filePath);
         Argument.ThrowIfLessThan(lineNumber, 0);
 
         _logger = logger;
         _completionLevel = completionLevel;
-        _failedLevel = failedLevel;
         _printDebugInformation = printDebugInformation;
-        _name = name;
+        _identifier = identifier;
 
         _memberName = memberName;
         _filePath = filePath;
@@ -47,7 +44,7 @@ internal sealed partial class MeasurementScope : IDisposable
 
         _stopWatch = Stopwatch.StartNew();
 
-        LogStart(_completionLevel, _name);
+        LogStart(_completionLevel, _identifier);
     }
 
     /// <inheritdoc/>
@@ -59,11 +56,11 @@ internal sealed partial class MeasurementScope : IDisposable
 
         if (Marshal.GetExceptionPointers() == IntPtr.Zero)
         {
-            LogComplete(_completionLevel, _name, _stopWatch.ElapsedMilliseconds);
+            LogComplete(_completionLevel, _identifier, _stopWatch.ElapsedMilliseconds);
         }
         else
         {
-            LogFailed(_failedLevel, _name, _stopWatch.ElapsedMilliseconds);
+            LogFailed(_completionLevel, _identifier, _stopWatch.ElapsedMilliseconds);
             if (!printDebugInformation.HasValue)
             {
                 printDebugInformation = true;
@@ -72,32 +69,32 @@ internal sealed partial class MeasurementScope : IDisposable
 
         if (printDebugInformation.HasValue && printDebugInformation.Value)
         {
-            LogDebugInformation(_name, _memberName, _filePath, _lineNumber);
+            LogDebugInformation(_identifier, _memberName, _filePath, _lineNumber);
         }
     }
 
-    [LoggerMessage(EventId = 1, Message = "Measurement `{name}` started.")]
-    private partial void LogStart(LogLevel level, string name);
+    [LoggerMessage(EventId = 1, Message = "Measurement `{identifier}` started.")]
+    private partial void LogStart(LogLevel level, string identifier);
 
     [LoggerMessage(
         EventId = 2,
-        Message = "Measurement `{name}` completed in {elapsedMilliseconds} ms."
+        Message = "Measurement `{identifier}` completed in {elapsedMilliseconds} ms."
     )]
-    private partial void LogComplete(LogLevel level, string name, long elapsedMilliseconds);
+    private partial void LogComplete(LogLevel level, string identifier, long elapsedMilliseconds);
 
     [LoggerMessage(
         EventId = 3,
-        Message = "Measurement `{name}` failed with exception after {elapsedMilliseconds} ms."
+        Message = "Measurement `{identifier}` failed with exception in {elapsedMilliseconds} ms."
     )]
-    private partial void LogFailed(LogLevel level, string name, long elapsedMilliseconds);
+    private partial void LogFailed(LogLevel level, string identifier, long elapsedMilliseconds);
 
     [LoggerMessage(
         EventId = 4,
         Level = LogLevel.Debug,
-        Message = "Measurement `{name}` Debug Information - MemberName: `{memberName}` FilePath: `{filePath}` LineNumber: `{lineNumber}`"
+        Message = "Measurement `{identifier}` - Debug Information - MemberName: `{memberName}` FilePath: `{filePath}` LineNumber: `{lineNumber}`"
     )]
     private partial void LogDebugInformation(
-        string name,
+        string identifier,
         string memberName,
         string filePath,
         int lineNumber

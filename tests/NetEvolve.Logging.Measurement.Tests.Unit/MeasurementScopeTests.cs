@@ -19,7 +19,6 @@ public class MeasurementScopeTests
                 logger,
                 nameof(Constructor_WithLoggerNull_ThrowsArgumentNullException),
                 default,
-                default,
                 null,
                 "",
                 "",
@@ -34,19 +33,19 @@ public class MeasurementScopeTests
     [MemberData(nameof(NullOrWhiteSpaceData))]
     public void Constructor_WithNameInvalid_ThrowsArgumentException(
         Type exceptionType,
-        string? name
+        string? identifier
     )
     {
         // Arrange
         ILogger logger = NullLogger<MeasurementScopeTests>.Instance;
 
         // Act
-        void Act() => _ = new MeasurementScope(logger, name, default, default, null, "", "", 0);
+        void Act() => _ = new MeasurementScope(logger, identifier, default, null, "", "", 0);
 
         // Assert
         var ex = (ArgumentException)Assert.Throws(exceptionType, Act);
         Assert.IsType(exceptionType, ex);
-        Assert.Equal("name", ex.ParamName);
+        Assert.Equal(nameof(identifier), ex.ParamName);
     }
 
     [Theory]
@@ -64,7 +63,6 @@ public class MeasurementScopeTests
             _ = new MeasurementScope(
                 logger,
                 nameof(Constructor_WithMemberNameInvalid_ThrowsArgumentException),
-                default,
                 default,
                 null,
                 memberName,
@@ -94,7 +92,6 @@ public class MeasurementScopeTests
                 logger,
                 nameof(Constructor_WithFilePathInvalid_ThrowsArgumentException),
                 default,
-                default,
                 null,
                 nameof(Constructor_WithFilePathInvalid_ThrowsArgumentException),
                 filePath,
@@ -118,7 +115,6 @@ public class MeasurementScopeTests
             _ = new MeasurementScope(
                 logger,
                 nameof(Constructor_WithLineNumberInvalid_ThrowsArgumentException),
-                default,
                 default,
                 null,
                 nameof(Constructor_WithLineNumberInvalid_ThrowsArgumentException),

@@ -33,22 +33,24 @@ public class MeasurementScopeExtensionsTests
         void Act() => logger.StartMeasurement(null!, LogLevel.Information);
 
         // Assert
-        _ = Assert.Throws<ArgumentNullException>("name", Act);
+        _ = Assert.Throws<ArgumentNullException>("identifier", Act);
     }
 
     [Theory]
     [InlineData("")]
     [InlineData(" ")]
     [InlineData("\t")]
-    public void StartMeasurement_WithNameEmptyOrWhiteSpace_ThrowsArgumentException(string name)
+    public void StartMeasurement_WithNameEmptyOrWhiteSpace_ThrowsArgumentException(
+        string identifier
+    )
     {
         // Arrange
         ILogger logger = NullLogger<MeasurementScopeExtensionsTests>.Instance;
 
         // Act
-        void Act() => logger.StartMeasurement(name, LogLevel.Information);
+        void Act() => logger.StartMeasurement(identifier, LogLevel.Information);
 
         // Assert
-        _ = Assert.Throws<ArgumentException>(nameof(name), Act);
+        _ = Assert.Throws<ArgumentException>(nameof(identifier), Act);
     }
 }
