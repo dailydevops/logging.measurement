@@ -121,7 +121,7 @@ public class MeasurementScopeExtensionsTests
                     entry.LogLevel
                 );
                 Assert.StartsWith(message, entry.Message, StringComparison.Ordinal);
-            }
+            },
         };
 
         if (

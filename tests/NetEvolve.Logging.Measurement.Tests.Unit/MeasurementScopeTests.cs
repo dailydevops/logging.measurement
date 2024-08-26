@@ -132,6 +132,6 @@ public class MeasurementScopeTests
             { typeof(ArgumentNullException), null },
             { typeof(ArgumentException), "" },
             { typeof(ArgumentException), " " },
-            { typeof(ArgumentException), "\t" }
+            { typeof(ArgumentException), "\t" },
         };
 }
