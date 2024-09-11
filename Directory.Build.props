@@ -14,6 +14,11 @@
     <TestTargetFrameworks>net6.0;net7.0;net8.0</TestTargetFrameworks>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- Workaround, until https://github.com/GitTools/GitVersion/pull/4206 is released -->
+    <GitVersionTargetFramework>net8.0</GitVersionTargetFramework>
+  </PropertyGroup>
+
   <PropertyGroup Label="Package settings">
     <Title>$(MSBuildProjectName)</Title>
     <Description>Extensions for `ILogger` implementations to measure execution times for a named scope.</Description>
