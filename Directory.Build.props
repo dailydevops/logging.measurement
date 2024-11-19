@@ -28,6 +28,8 @@
     <CopyrightYearStart>2024</CopyrightYearStart>
 
     <PackageReleaseNotes>$(PackageProjectUrl)/releases/</PackageReleaseNotes>
+
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
 
 </Project>
