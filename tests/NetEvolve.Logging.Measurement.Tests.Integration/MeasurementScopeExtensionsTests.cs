@@ -89,7 +89,7 @@ public class MeasurementScopeExtensionsTests
         );
     }
 
-    private Action<LoggedMessage>[] GetExpectedEntries(
+    private static Action<LoggedMessage>[] GetExpectedEntries(
         bool throwError,
         string name,
         LogLevel? completionLevel,
