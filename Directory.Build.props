@@ -1,15 +1,12 @@
 <Project>
-
   <PropertyGroup>
     <ProjectTargetFrameworks>net6.0;net8.0;net9.0</ProjectTargetFrameworks>
     <TestTargetFrameworks>net6.0;net8.0;net9.0</TestTargetFrameworks>
   </PropertyGroup>
-
   <PropertyGroup>
     <!-- Workaround, until https://github.com/GitTools/GitVersion/pull/4206 is released -->
     <GitVersionTargetFramework>net8.0</GitVersionTargetFramework>
   </PropertyGroup>
-
   <PropertyGroup Label="Package settings">
     <Title>$(MSBuildProjectName)</Title>
     <Description>Extensions for `ILogger` implementations to measure execution times for a named scope.</Description>
@@ -17,10 +14,7 @@
     <PackageProjectUrl>https://github.com/dailydevops/extensions.logging.measurement</PackageProjectUrl>
     <PackageTags>logging;stopwatch;measurement;scope</PackageTags>
     <CopyrightYearStart>2024</CopyrightYearStart>
-
     <PackageReleaseNotes>$(PackageProjectUrl)/releases/</PackageReleaseNotes>
-
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
-
 </Project>

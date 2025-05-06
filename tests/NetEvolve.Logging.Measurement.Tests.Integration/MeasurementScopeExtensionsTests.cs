@@ -23,10 +23,7 @@ public class MeasurementScopeExtensionsTests
         bool? printDebugInformation
     )
     {
-        var logger = XUnitLogger.CreateLogger<MeasurementScopeExtensionsTests>(
-            _output,
-            options: _options
-        );
+        var logger = XUnitLogger.CreateLogger<MeasurementScopeExtensionsTests>(_output, options: _options);
 
         using (
             logger.StartMeasurement(
@@ -57,10 +54,7 @@ public class MeasurementScopeExtensionsTests
         bool? printDebugInformation
     )
     {
-        var logger = XUnitLogger.CreateLogger<MeasurementScopeExtensionsTests>(
-            _output,
-            options: _options
-        );
+        var logger = XUnitLogger.CreateLogger<MeasurementScopeExtensionsTests>(_output, options: _options);
 
         var ex = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
         {
@@ -100,15 +94,8 @@ public class MeasurementScopeExtensionsTests
         {
             entry =>
             {
-                Assert.Equal(
-                    completionLevel ?? MeasurementScopeExtensions.DefaultLogLevel,
-                    entry.LogLevel
-                );
-                Assert.Contains(
-                    $"Measurement `{name}` started.",
-                    entry.Message,
-                    StringComparison.Ordinal
-                );
+                Assert.Equal(completionLevel ?? MeasurementScopeExtensions.DefaultLogLevel, entry.LogLevel);
+                Assert.Contains($"Measurement `{name}` started.", entry.Message, StringComparison.Ordinal);
             },
             entry =>
             {
@@ -116,10 +103,7 @@ public class MeasurementScopeExtensionsTests
                     ? $"Measurement `{name}` failed with exception in "
                     : $"Measurement `{name}` completed in ";
 
-                Assert.Equal(
-                    completionLevel ?? MeasurementScopeExtensions.DefaultLogLevel,
-                    entry.LogLevel
-                );
+                Assert.Equal(completionLevel ?? MeasurementScopeExtensions.DefaultLogLevel, entry.LogLevel);
                 Assert.StartsWith(message, entry.Message, StringComparison.Ordinal);
             },
         };
@@ -149,9 +133,7 @@ public class MeasurementScopeExtensionsTests
         {
             var data = new TheoryData<LogLevel?, bool?>();
 
-            foreach (
-                var completionLevel in new LogLevel?[] { null, LogLevel.Debug, LogLevel.Warning }
-            )
+            foreach (var completionLevel in new LogLevel?[] { null, LogLevel.Debug, LogLevel.Warning })
             {
                 foreach (var printDebugInformation in new bool?[] { null, false, true })
                 {

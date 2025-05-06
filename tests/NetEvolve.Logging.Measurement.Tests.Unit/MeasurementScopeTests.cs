@@ -31,10 +31,7 @@ public class MeasurementScopeTests
 
     [Theory]
     [MemberData(nameof(NullOrWhiteSpaceData))]
-    public void Constructor_WithNameInvalid_ThrowsArgumentException(
-        Type exceptionType,
-        string? identifier
-    )
+    public void Constructor_WithNameInvalid_ThrowsArgumentException(Type exceptionType, string? identifier)
     {
         // Arrange
         ILogger logger = NullLogger<MeasurementScopeTests>.Instance;
@@ -50,10 +47,7 @@ public class MeasurementScopeTests
 
     [Theory]
     [MemberData(nameof(NullOrWhiteSpaceData))]
-    public void Constructor_WithMemberNameInvalid_ThrowsArgumentException(
-        Type exceptionType,
-        string? memberName
-    )
+    public void Constructor_WithMemberNameInvalid_ThrowsArgumentException(Type exceptionType, string? memberName)
     {
         // Arrange
         ILogger logger = NullLogger<MeasurementScopeTests>.Instance;
@@ -78,10 +72,7 @@ public class MeasurementScopeTests
 
     [Theory]
     [MemberData(nameof(NullOrWhiteSpaceData))]
-    public void Constructor_WithFilePathInvalid_ThrowsArgumentException(
-        Type exceptionType,
-        string? filePath
-    )
+    public void Constructor_WithFilePathInvalid_ThrowsArgumentException(Type exceptionType, string? filePath)
     {
         // Arrange
         ILogger logger = NullLogger<MeasurementScopeTests>.Instance;

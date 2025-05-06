@@ -14,10 +14,7 @@ public class MeasurementScopeExtensionsTests
         ILogger logger = null!;
 
         // Act
-        void Act() =>
-            logger.StartMeasurement(
-                nameof(StartMeasurement_WithLoggerNull_ThrowsArgumentNullException)
-            );
+        void Act() => logger.StartMeasurement(nameof(StartMeasurement_WithLoggerNull_ThrowsArgumentNullException));
 
         // Assert
         _ = Assert.Throws<ArgumentNullException>("logger", Act);
@@ -40,9 +37,7 @@ public class MeasurementScopeExtensionsTests
     [InlineData("")]
     [InlineData(" ")]
     [InlineData("\t")]
-    public void StartMeasurement_WithNameEmptyOrWhiteSpace_ThrowsArgumentException(
-        string identifier
-    )
+    public void StartMeasurement_WithNameEmptyOrWhiteSpace_ThrowsArgumentException(string identifier)
     {
         // Arrange
         ILogger logger = NullLogger<MeasurementScopeExtensionsTests>.Instance;
