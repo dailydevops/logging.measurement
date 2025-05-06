@@ -76,10 +76,7 @@ internal sealed partial class MeasurementScope : IDisposable
     [LoggerMessage(EventId = 1, Message = "Measurement `{identifier}` started.")]
     private partial void LogStart(LogLevel level, string identifier);
 
-    [LoggerMessage(
-        EventId = 2,
-        Message = "Measurement `{identifier}` completed in {elapsedMilliseconds} ms."
-    )]
+    [LoggerMessage(EventId = 2, Message = "Measurement `{identifier}` completed in {elapsedMilliseconds} ms.")]
     private partial void LogComplete(LogLevel level, string identifier, long elapsedMilliseconds);
 
     [LoggerMessage(
@@ -93,10 +90,5 @@ internal sealed partial class MeasurementScope : IDisposable
         Level = LogLevel.Debug,
         Message = "Measurement `{identifier}` - Debug Information - MemberName: `{memberName}` FilePath: `{filePath}` LineNumber: `{lineNumber}`"
     )]
-    private partial void LogDebugInformation(
-        string identifier,
-        string memberName,
-        string filePath,
-        int lineNumber
-    );
+    private partial void LogDebugInformation(string identifier, string memberName, string filePath, int lineNumber);
 }
