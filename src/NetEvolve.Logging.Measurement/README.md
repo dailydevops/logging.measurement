@@ -153,7 +153,7 @@ public static IDisposable StartMeasurement(
    ```csharp
    // Good
    using (_logger.StartMeasurement("Customer Order Processing"))
-   
+
    // Avoid
    using (_logger.StartMeasurement("Operation1"))
    ```
@@ -174,7 +174,7 @@ public static IDisposable StartMeasurement(
            ProcessItem(item);
        }
    }
-   
+
    // Avoid: Measuring each iteration
    foreach (var item in items)
    {
@@ -196,7 +196,6 @@ public static IDisposable StartMeasurement(
 
 ## Supported Frameworks
 
-- .NET 6.0
 - .NET 8.0
 - .NET 9.0
 - .NET 10.0
