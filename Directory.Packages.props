@@ -21,7 +21,7 @@
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="coverlet.msbuild" Version="6.0.4" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="NetEvolve.Arguments" Version="2.0.0" />
     <PackageVersion Include="NetEvolve.Extensions.XUnit" Version="2.7.59" />
     <PackageVersion Include="NetEvolve.Logging.XUnit" Version="2.0.10" />
