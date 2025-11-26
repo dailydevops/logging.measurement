@@ -32,7 +32,7 @@ public class MeasurementScopeExtensionsTests
             )
         )
         {
-            await Task.Delay(25);
+            await Task.Delay(25, TestContext.Current.CancellationToken);
         }
 
         Assert.Collection(
@@ -65,7 +65,7 @@ public class MeasurementScopeExtensionsTests
                 )
             )
             {
-                await Task.Delay(25);
+                await Task.Delay(25, TestContext.Current.CancellationToken);
                 throw new InvalidOperationException();
             }
         });
