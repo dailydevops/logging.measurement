@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using NetEvolve.Logging.Abstractions;
 using NetEvolve.Logging.XUnit;
 using Xunit;
-using Xunit.Abstractions;
 
 public class MeasurementScopeExtensionsTests
 {
@@ -33,7 +32,7 @@ public class MeasurementScopeExtensionsTests
             )
         )
         {
-            await Task.Delay(25);
+            await Task.Delay(25, TestContext.Current.CancellationToken);
         }
 
         Assert.Collection(
@@ -66,7 +65,7 @@ public class MeasurementScopeExtensionsTests
                 )
             )
             {
-                await Task.Delay(25);
+                await Task.Delay(25, TestContext.Current.CancellationToken);
                 throw new InvalidOperationException();
             }
         });

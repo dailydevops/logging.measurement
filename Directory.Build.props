@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <ProjectTargetFrameworks>net6.0;net8.0;net9.0</ProjectTargetFrameworks>
-    <TestTargetFrameworks>net6.0;net8.0;net9.0</TestTargetFrameworks>
+    <ProjectTargetFrameworks>net8.0;net9.0;net10.0</ProjectTargetFrameworks>
+    <TestTargetFrameworks>net8.0;net9.0;net10.0</TestTargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
     <!-- Workaround, until https://github.com/GitTools/GitVersion/pull/4206 is released -->
