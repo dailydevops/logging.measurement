@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using NetEvolve.Logging.Abstractions;
 using NetEvolve.Logging.XUnit;
 using Xunit;
-using Xunit.Abstractions;
 
 public class MeasurementScopeExtensionsTests
 {
