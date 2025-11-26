@@ -52,7 +52,7 @@ For detailed usage examples and advanced scenarios, see the [package documentati
 
 ## Requirements
 
-- .NET 6.0 or later
+- .NET 8.0 or later
 - Microsoft.Extensions.Logging.Abstractions 10.0.0 or compatible version
 
 ## Contributing
