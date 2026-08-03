@@ -65,7 +65,7 @@ public class MeasurementScopeExtensionsTests
                 )
             )
             {
-                await Task.Delay(25, TestContext.Current.CancellationToken);
+                await Task.Delay(25, TestContext.Current.CancellationToken).ConfigureAwait(false);
                 throw new InvalidOperationException();
             }
         });
