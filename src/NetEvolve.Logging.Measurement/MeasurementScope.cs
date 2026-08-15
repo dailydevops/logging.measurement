@@ -28,10 +28,10 @@ internal sealed partial class MeasurementScope : IDisposable
     )
     {
         ArgumentNullException.ThrowIfNull(logger);
-        Argument.ThrowIfNullOrWhiteSpace(identifier);
-        Argument.ThrowIfNullOrWhiteSpace(memberName);
-        Argument.ThrowIfNullOrWhiteSpace(filePath);
-        Argument.ThrowIfLessThan(lineNumber, 0);
+        ArgumentException.ThrowIfNullOrWhiteSpace(identifier);
+        ArgumentException.ThrowIfNullOrWhiteSpace(memberName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+        ArgumentOutOfRangeException.ThrowIfLessThan(lineNumber, 0);
 
         _logger = logger;
         _completionLevel = completionLevel;
