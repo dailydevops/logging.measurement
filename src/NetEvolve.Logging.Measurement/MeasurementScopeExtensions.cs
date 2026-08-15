@@ -41,7 +41,7 @@ public static class MeasurementScopeExtensions
     )
     {
         ArgumentNullException.ThrowIfNull(logger);
-        Argument.ThrowIfNullOrWhiteSpace(identifier);
+        ArgumentException.ThrowIfNullOrWhiteSpace(identifier);
 
         if (completionLevel is LogLevel.None)
         {
