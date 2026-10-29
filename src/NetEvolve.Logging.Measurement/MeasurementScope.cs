@@ -15,7 +15,7 @@ internal sealed partial class MeasurementScope : IDisposable
     private readonly string _memberName;
     private readonly string _filePath;
     private readonly int _lineNumber;
-    private readonly Stopwatch _stopWatch;
+    private readonly long _start = Stopwatch.GetTimestamp();
 
     internal MeasurementScope(
         ILogger logger,
@@ -42,25 +42,23 @@ internal sealed partial class MeasurementScope : IDisposable
         _filePath = filePath;
         _lineNumber = lineNumber;
 
-        _stopWatch = Stopwatch.StartNew();
-
         LogStart(_completionLevel, _identifier);
     }
 
     /// <inheritdoc/>
     public void Dispose()
     {
-        _stopWatch.Stop();
+        var elapsedMs = (long)Stopwatch.GetElapsedTime(_start).TotalMilliseconds;
 
         var printDebugInformation = _printDebugInformation;
 
         if (Marshal.GetExceptionPointers() == IntPtr.Zero)
         {
-            LogComplete(_completionLevel, _identifier, _stopWatch.ElapsedMilliseconds);
+            LogComplete(_completionLevel, _identifier, elapsedMs);
         }
         else
         {
-            LogFailed(_completionLevel, _identifier, _stopWatch.ElapsedMilliseconds);
+            LogFailed(_completionLevel, _identifier, elapsedMs);
             if (!printDebugInformation.HasValue)
             {
                 printDebugInformation = true;
